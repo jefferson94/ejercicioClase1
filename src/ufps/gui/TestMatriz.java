@@ -20,16 +20,16 @@ public class TestMatriz {
             MatrizEnteros m2=new MatrizEnteros(3,0);
             System.out.println(m2.toString());
        
-            boolean esDispersa = m2.esDispersa();
+            boolean esDispersa = m.esDispersa();
         System.out.println(esDispersa);
         
-         int v1[]= {0,0,3}; 
-         
-         int v2[]= {0,4,3}; 
-         
-         
-         boolean a = vectoresIguales(v1,v2);
-         System.out.println(a);
+//         int v1[]= {0,0,3}; 
+//         
+//         int v2[]= {0,4,3}; 
+//         
+//         
+//         boolean a = vectoresIguales(v1,v2);
+//         System.out.println(a);
         }
 
     private static boolean vectoresIguales(int[] v1, int[] v2) {

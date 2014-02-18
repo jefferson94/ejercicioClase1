@@ -4,6 +4,7 @@
  */
 package ufps.negocio;
 
+        
 /**
  *
  * @author MADARME
@@ -105,13 +106,16 @@ public class MatrizEnteros {
             {
 
              int tamaño = matriz[0].length;
-             int i =0;
+             
            
-             while (matriz[i].length!=tamaño){
-            
-               return true;
-        
-             }
+          for ( int i=0; i<matriz.length;i++){
+          
+                if (matriz[i].length!=tamaño) {
+                  return true ;
+              }
+          
+          }
+              
              return false ;
             }
     
@@ -121,38 +125,57 @@ public class MatrizEnteros {
      * @param obj la matriz2 a comparar
      * @return 
      */
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         MatrizEnteros m2=(MatrizEnteros)obj;
       
         boolean a = this.esDispersa();
         boolean b= m2.esDispersa();
        int m4[][]= this.matriz;
         
-        if ( this.matriz.length==m2.matriz.length){
-        
-            if( a==b) {
-               
-                int i =0 ;
-                while ( i < this.length){
-                
-                 
-         //boolean s = vectoresIguales(m4[i],m2[i]);
+        if (this.matriz.length == m2.matriz.length) {
 
-                if( s== true ){
-                
-                return true ;
-                
+            if (a == b) {
+
+                boolean m = sonIguales(m2);
+
+
+                if (m == true) {
+
+
+
+                    boolean comparar=false ;//vectoresIguales(this[0],m2[0]);
+
+                    if (comparar == true) {
+                    }
+
                 }
-                
-                }
-            
-               }
-            return false;
             }
-        
-        return false;
-    }
+
+return false ;
+        }
+        return true;
+        }
+
+    private boolean sonIguales(MatrizEnteros m2) {
+         int contador=0;
+
+       if (matriz.length==m2.matriz.length){
+       for (int i=0;i<matriz.length;i++){
+          
+               if (matriz[i].length==m2.matriz[i].length){
+                   contador ++;
+               }
+               if (contador == matriz.length){
+                   return true;
+               }
+           }
+       }
+     
+    return false;
+}
+
+
+      
     
     public boolean vectoresIguales ( int m1[] ,int m2[]){
        
